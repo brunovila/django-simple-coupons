@@ -24,8 +24,8 @@ class Ruleset(models.Model):
 class AllowedUsersRule(models.Model):
     user_model = get_user_model()
 
-    users = models.ManyToManyField(user_model, verbose_name="Users", blank=True)
-    all_users = models.BooleanField(default=False, verbose_name="All users?")
+    users = models.ManyToManyField(user_model, verbose_name="Uusarios", blank=True)
+    all_users = models.BooleanField(default=False, verbose_name="Todos?")
 
     def __str__(self):
         return "AllowedUsersRule Nº{0}".format(self.id)
@@ -116,7 +116,7 @@ class Coupon(models.Model):
             "value": self.discount.value,
             "is_percentage": self.discount.is_percentage
         }
-    
+
     def get_discounted_value(self, initial_value):
         discount = self.get_discount()
 

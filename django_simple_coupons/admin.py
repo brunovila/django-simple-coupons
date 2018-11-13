@@ -37,17 +37,20 @@ class CouponUserAdmin(admin.ModelAdmin):
 
 @admin.register(AllowedUsersRule)
 class AllowedUsersRuleAdmin(admin.ModelAdmin):
-    def get_model_perms(self, request):
-        return {}
+    pass
+    # def get_model_perms(self, request):
+    #     return {}
 
 
 @admin.register(MaxUsesRule)
 class MaxUsesRuleAdmin(admin.ModelAdmin):
-    def get_model_perms(self, request):
-        return {}
+    pass
+    # def get_model_perms(self, request):
+    #     return {}
 
 
 @admin.register(ValidityRule)
 class ValidityRuleAdmin(admin.ModelAdmin):
-    def get_model_perms(self, request):
-        return {}
+    pass
+    # def get_model_perms(self, request):
+    #     return {}
