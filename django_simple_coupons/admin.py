@@ -37,20 +37,21 @@ class CouponUserAdmin(admin.ModelAdmin):
 
 @admin.register(AllowedUsersRule)
 class AllowedUsersRuleAdmin(admin.ModelAdmin):
-    pass
+    list_display=('__str__','users','all_users')
+
     # def get_model_perms(self, request):
     #     return {}
 
 
 @admin.register(MaxUsesRule)
 class MaxUsesRuleAdmin(admin.ModelAdmin):
-    pass
+    list_display=('__str__','max_uses','is_infinite','uses_per_user',)
     # def get_model_perms(self, request):
     #     return {}
 
 
 @admin.register(ValidityRule)
 class ValidityRuleAdmin(admin.ModelAdmin):
-    list_display=('expiration_date','is_active',)
+    list_display=('__str__','expiration_date','is_active',)
     # def get_model_perms(self, request):
     #     return {}

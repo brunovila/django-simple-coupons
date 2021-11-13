@@ -24,8 +24,8 @@ class Ruleset(models.Model):
 class AllowedUsersRule(models.Model):
     user_model = get_user_model()
 
-    users = models.ManyToManyField(user_model, verbose_name="Uusarios", blank=True)
-    all_users = models.BooleanField(default=False, verbose_name="Todos?")
+    users = models.ManyToManyField(user_model, verbose_name="Users", blank=True)
+    all_users = models.BooleanField(default=False, verbose_name="All Users?")
 
     def __str__(self):
         return "AllowedUsersRule Nº{0}".format(self.id)
