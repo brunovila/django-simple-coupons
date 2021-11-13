@@ -21,7 +21,7 @@ class CouponAdmin(admin.ModelAdmin):
 
 @admin.register(Discount)
 class DiscountAdmin(admin.ModelAdmin):
-    pass
+    list_display=("__str__",'value','is_percentage',)
 
 
 @admin.register(Ruleset)
