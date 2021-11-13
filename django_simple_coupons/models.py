@@ -44,7 +44,7 @@ class MaxUsesRule(models.Model):
         if self.is_infinite:
             return f"MaxUsesRule Nº{format(self.id)} Infinite Users"
         else:
-            return f"MaxUsesRule Nº{format(self.id)} MaxUsers: {self.max_users} Uses per user: {self.uses_per_user}"
+            return f"MaxUsesRule Nº{format(self.id)} MaxUsers: {self.max_uses} Uses per user: {self.uses_per_user}"
 
     class Meta:
         verbose_name = "Max Uses Rule"
