@@ -40,7 +40,9 @@ class CouponUserAdmin(admin.ModelAdmin):
 class AllowedUsersRuleAdmin(admin.ModelAdmin):
     list_display=('__str__','strusers','all_users',)
     def strusers(self,obj):
-        return ",".join(obj.users.all())
+        if len(obj.users.all()>0):
+            return ",".join(obj.users.all())
+        else return ""
     # def get_model_perms(self, request):
     #     return {}
 
