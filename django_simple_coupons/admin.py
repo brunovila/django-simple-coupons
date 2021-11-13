@@ -51,6 +51,6 @@ class MaxUsesRuleAdmin(admin.ModelAdmin):
 
 @admin.register(ValidityRule)
 class ValidityRuleAdmin(admin.ModelAdmin):
-    list_display=('expiration_date','active',)
+    list_display=('expiration_date','is_active',)
     # def get_model_perms(self, request):
     #     return {}
