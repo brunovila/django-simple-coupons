@@ -42,7 +42,7 @@ class AllowedUsersRuleAdmin(admin.ModelAdmin):
     autocomplete_fields=['users']
     def strusers(self,obj):
         if len(obj.users.all())>0:
-            return ",".join(i.nome+" "+i.apelidos for i in obj.users.all())
+            return ", ".join(i.nome+" "+i.apelidos for i in obj.users.all())
         else:
             return ""
     # def get_model_perms(self, request):
