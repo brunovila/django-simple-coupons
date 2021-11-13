@@ -41,7 +41,7 @@ class AllowedUsersRuleAdmin(admin.ModelAdmin):
     list_display=('__str__','strusers','all_users',)
     def strusers(self,obj):
         if len(obj.users.all())>0:
-            return ",".join(i.nome." ".i.apelidos for i in obj.users.all())
+            return ",".join(i.nome+" "+i.apelidos for i in obj.users.all())
         else:
             return ""
     # def get_model_perms(self, request):
