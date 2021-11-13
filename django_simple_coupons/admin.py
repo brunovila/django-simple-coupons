@@ -42,7 +42,8 @@ class AllowedUsersRuleAdmin(admin.ModelAdmin):
     def strusers(self,obj):
         if len(obj.users.all()>0):
             return ",".join(obj.users.all())
-        else return ""
+        else:
+            return ""
     # def get_model_perms(self, request):
     #     return {}
 
