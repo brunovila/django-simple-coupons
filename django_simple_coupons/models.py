@@ -56,7 +56,7 @@ class ValidityRule(models.Model):
     is_active = models.BooleanField(default=False, verbose_name="Is active?")
 
     def __str__(self):
-        return f"ValidityRule Nº{format(self.id)} {expiration_date} {'active' if self.is_active else 'inactive'}"
+        return f"ValidityRule Nº{format(self.id)} {self.expiration_date} {'active' if self.is_active else 'inactive'}"
 
     class Meta:
         verbose_name = "Validity Rule"
