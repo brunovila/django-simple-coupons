@@ -32,6 +32,7 @@ class RulesetAdmin(admin.ModelAdmin):
 @admin.register(CouponUser)
 class CouponUserAdmin(admin.ModelAdmin):
     list_display = ('user', 'coupon', 'times_used', )
+    autocomplete_fields=['user']
     actions = [reset_coupon_usage]
 
 
