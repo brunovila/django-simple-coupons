@@ -41,7 +41,10 @@ class MaxUsesRule(models.Model):
     uses_per_user = models.IntegerField(default=1, verbose_name="Uses per user")
 
     def __str__(self):
-        return "MaxUsesRule Nº{0}".   format(self.id)
+        if self.is_infinite:
+            return f"MaxUsesRule Nº{format(self.id)} Infinite Users"
+        else:
+            return f"MaxUsesRule Nº{format(self.id)} MaxUsers: {self.max_users} Uses per user: {self.uses_per_user}"
 
     class Meta:
         verbose_name = "Max Uses Rule"
