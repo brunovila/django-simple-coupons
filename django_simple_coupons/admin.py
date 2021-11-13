@@ -39,6 +39,7 @@ class CouponUserAdmin(admin.ModelAdmin):
 @admin.register(AllowedUsersRule)
 class AllowedUsersRuleAdmin(admin.ModelAdmin):
     list_display=('__str__','strusers','all_users',)
+    autocomplete_fields=['users']
     def strusers(self,obj):
         if len(obj.users.all())>0:
             return ",".join(i.nome+" "+i.apelidos for i in obj.users.all())
