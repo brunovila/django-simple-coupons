@@ -27,8 +27,16 @@ class AllowedUsersRule(models.Model):
     users = models.ManyToManyField(user_model, verbose_name="Users", blank=True)
     all_users = models.BooleanField(default=False, verbose_name="All Users?")
 
+    def strusers(self):
+        if len(self.users.all())>0:
+            return ", ".join(i.nome+" "+i.apelidos for i in self.users.all())
+        else:
+            return ""
     def __str__(self):
-        return "AllowedUsersRule Nº{0}".format(self.id)
+        if self.all_users:
+            return "All Users".format(self.id)
+        else:
+            return self.strusers()
 
     class Meta:
         verbose_name = "Allowed User Rule"
