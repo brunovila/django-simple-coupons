@@ -37,8 +37,8 @@ class CouponUserAdmin(admin.ModelAdmin):
 
 @admin.register(AllowedUsersRule)
 class AllowedUsersRuleAdmin(admin.ModelAdmin):
-    list_display=('__str__','users','all_users',)
-    def stralumnos(self,obj):
+    list_display=('__str__','strusers','all_users',)
+    def strusers(self,obj):
         return ",".join(obj.users)
     # def get_model_perms(self, request):
     #     return {}
