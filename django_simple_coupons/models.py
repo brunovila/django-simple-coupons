@@ -86,7 +86,7 @@ class Discount(models.Model):
         if self.is_percentage:
             return "{0}% - Discount".format(self.value)
 
-        return "${0} - Discount".format(self.value)
+        return "{0} € - Discount".format(self.value)
 
     class Meta:
         verbose_name = "Discount"
