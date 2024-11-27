@@ -16,6 +16,7 @@ from django_simple_coupons.actions import (reset_coupon_usage, delete_expired_co
 @admin.register(Coupon)
 class CouponAdmin(admin.ModelAdmin):
     list_display = ('code', 'discount', 'ruleset', 'times_used', 'created', )
+    search_fields=['code']
     actions = [delete_expired_coupons]
 
 
@@ -32,6 +33,7 @@ class RulesetAdmin(admin.ModelAdmin):
 @admin.register(CouponUser)
 class CouponUserAdmin(admin.ModelAdmin):
     list_display = ('user', 'coupon', 'times_used', )
+    search_fields = ['user__username', 'coupon__code']
     autocomplete_fields=['user']
     actions = [reset_coupon_usage]
 
